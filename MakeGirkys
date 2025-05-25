@@ -1,0 +1,2054 @@
+echo "# MakeGirly" >> README.md 
+git init 
+git add README.md 
+git commit -m "primer commit" 
+git branch -M main 
+git remote add origin https://github.com/PrevencionNoEstasSolo/MakeGirly.git
+ git push -u origin main
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   MakeGirl - Belleza y Estilo
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: "Poppins", sans-serif;
+    }
+    /* Scrollbar for chat messages */
+    #chat-messages::-webkit-scrollbar {
+      width: 8px;
+    }
+    #chat-messages::-webkit-scrollbar-thumb {
+      background-color: #db2777;
+      border-radius: 4px;
+    }
+  </style>
+ </head>
+ <body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen transition-colors duration-500" data-theme="light">
+  <!-- Header -->
+  <header class="bg-white shadow sticky top-0 z-50 transition-colors duration-500" id="header">
+   <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+    <a class="text-3xl font-bold text-pink-700 tracking-wide" href="#home">
+     MakeGirl
+    </a>
+    <nav class="hidden md:flex space-x-8 font-semibold text-gray-700 dark:text-gray-300">
+     <a class="hover:text-pink-600 transition" href="#catalogo">
+      Catálogo
+     </a>
+     <a class="hover:text-pink-600 transition" href="#kits">
+      Kits Personalizados
+     </a>
+     <a class="hover:text-pink-600 transition" href="#seguimiento">
+      Seguimiento Pedido
+     </a>
+     <a class="hover:text-pink-600 transition" href="#promociones">
+      Promociones
+     </a>
+     <a class="hover:text-pink-600 transition" href="#blog">
+      Blog
+     </a>
+     <a class="hover:text-pink-600 transition" href="#tendencias">
+      Tendencias
+     </a>
+     <a class="hover:text-pink-600 transition" href="#politicas">
+      Políticas
+     </a>
+     <a class="hover:text-pink-600 transition" href="#reseñas">
+      Reseñas
+     </a>
+     <a class="hover:text-pink-600 transition" href="#usuario">
+      Mi Cuenta
+     </a>
+    </nav>
+    <div class="flex items-center space-x-4">
+     <button aria-label="Ver carrito" class="relative text-gray-700 hover:text-pink-600 transition focus:outline-none dark:text-gray-300" id="cart-button">
+      <i class="fas fa-shopping-cart fa-lg">
+      </i>
+      <span class="absolute -top-2 -right-2 bg-pink-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center" id="cart-count">
+       0
+      </span>
+     </button>
+     <button aria-label="Abrir menú" class="md:hidden text-gray-700 hover:text-pink-600 transition focus:outline-none dark:text-gray-300" id="menu-button">
+      <i class="fas fa-bars fa-lg">
+      </i>
+     </button>
+     <button aria-label="Cambiar modo oscuro/claro" class="ml-2 text-pink-600 hover:text-pink-800 focus:outline-none" id="toggle-theme" title="Cambiar modo oscuro/claro">
+      <i class="fas fa-moon">
+      </i>
+     </button>
+     <button aria-label="Abrir perfil de usuario" class="ml-2 text-pink-700 hover:text-pink-900 focus:outline-none" id="profile-button" title="Abrir perfil de usuario">
+      <i class="fas fa-user-circle fa-lg">
+      </i>
+     </button>
+    </div>
+   </div>
+   <!-- Mobile menu -->
+   <nav aria-label="Menú móvil" class="hidden md:hidden bg-white border-t border-gray-200 dark:bg-gray-900 dark:border-gray-700" id="mobile-menu">
+    <a class="block px-4 py-3 border-b border-gray-200 text-gray-700 font-semibold hover:bg-pink-50 hover:text-pink-600 dark:text-gray-300 dark:hover:bg-pink-900 dark:hover:text-pink-400" href="#catalogo">
+     Catálogo
+    </a>
+    <a class="block px-4 py-3 border-b border-gray-200 text-gray-700 font-semibold hover:bg-pink-50 hover:text-pink-600 dark:text-gray-300 dark:hover:bg-pink-900 dark:hover:text-pink-400" href="#kits">
+     Kits Personalizados
+    </a>
+    <a class="block px-4 py-3 border-b border-gray-200 text-gray-700 font-semibold hover:bg-pink-50 hover:text-pink-600 dark:text-gray-300 dark:hover:bg-pink-900 dark:hover:text-pink-400" href="#seguimiento">
+     Seguimiento Pedido
+    </a>
+    <a class="block px-4 py-3 border-b border-gray-200 text-gray-700 font-semibold hover:bg-pink-50 hover:text-pink-600 dark:text-gray-300 dark:hover:bg-pink-900 dark:hover:text-pink-400" href="#promociones">
+     Promociones
+    </a>
+    <a class="block px-4 py-3 border-b border-gray-200 text-gray-700 font-semibold hover:bg-pink-50 hover:text-pink-600 dark:text-gray-300 dark:hover:bg-pink-900 dark:hover:text-pink-400" href="#blog">
+     Blog
+    </a>
+    <a class="block px-4 py-3 border-b border-gray-200 text-gray-700 font-semibold hover:bg-pink-50 hover:text-pink-600 dark:text-gray-300 dark:hover:bg-pink-900 dark:hover:text-pink-400" href="#tendencias">
+     Tendencias
+    </a>
+    <a class="block px-4 py-3 border-b border-gray-200 text-gray-700 font-semibold hover:bg-pink-50 hover:text-pink-600 dark:text-gray-300 dark:hover:bg-pink-900 dark:hover:text-pink-400" href="#politicas">
+     Políticas
+    </a>
+    <a class="block px-4 py-3 border-b border-gray-200 text-gray-700 font-semibold hover:bg-pink-50 hover:text-pink-600 dark:text-gray-300 dark:hover:bg-pink-900 dark:hover:text-pink-400" href="#reseñas">
+     Reseñas
+    </a>
+    <a class="block px-4 py-3 text-gray-700 font-semibold hover:bg-pink-50 hover:text-pink-600 dark:text-gray-300 dark:hover:bg-pink-900 dark:hover:text-pink-400" href="#usuario">
+     Mi Cuenta
+    </a>
+   </nav>
+  </header>
+  <!-- Pop-up de bienvenida -->
+  <div aria-labelledby="welcome-title" aria-modal="true" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-70 hidden" id="welcome-popup" role="dialog">
+   <div class="bg-white rounded-lg max-w-md w-full p-6 relative shadow-lg dark:bg-gray-800 dark:text-gray-200">
+    <button aria-label="Cerrar ventana de bienvenida" class="absolute top-3 right-3 text-gray-600 hover:text-pink-600 dark:text-gray-400 dark:hover:text-pink-400 focus:outline-none" id="close-welcome">
+     <i class="fas fa-times fa-lg">
+     </i>
+    </button>
+    <h2 class="text-2xl font-bold text-pink-700 mb-4 text-center" id="welcome-title">
+     ¡Bienvenida a MakeGirl! 🛎️
+    </h2>
+    <p class="mb-4 text-center">
+     Obtén un
+     <span class="font-semibold text-pink-600">
+      10% de descuento
+     </span>
+     en tu primera compra a cambio de tu correo electrónico.
+    </p>
+    <form class="space-y-4" id="welcome-form">
+     <label class="block font-semibold text-gray-700 dark:text-gray-300" for="welcome-email">
+      Correo electrónico
+     </label>
+     <input class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" id="welcome-email" name="welcome-email" placeholder="tuemail@ejemplo.com" required="" type="email"/>
+     <button class="w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700 transition focus:outline-none focus:ring-2 focus:ring-pink-500" type="submit">
+      Obtener descuento
+     </button>
+    </form>
+    <p class="mt-3 text-center text-green-600 font-semibold hidden" id="welcome-message">
+    </p>
+   </div>
+  </div>
+  <!-- Banner -->
+  <section class="relative w-full max-h-[480px] overflow-hidden flex items-center justify-center" id="home">
+   <img alt="Banner principal con una modelo maquillada profesionalmente con colores vibrantes y fondo elegante" class="w-full object-cover object-center" height="480" loading="lazy" src="https://storage.googleapis.com/a1aa/image/2027bf5a-f05f-4d5a-8e8d-376922f4e7f0.jpg" width="1920"/>
+   <div class="absolute inset-0 bg-gradient-to-r from-pink-700/90 via-pink-600/70 to-pink-700/90 flex flex-col justify-center items-start px-6 md:px-20 text-white">
+    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight max-w-xl">
+     Descubre tu Belleza con MakeGirl
+    </h1>
+    <p class="mt-4 text-lg md:text-xl max-w-md">
+     Tonos para cada piel, calidad profesional y promociones exclusivas.
+    </p>
+    <a class="mt-6 inline-block bg-white text-pink-700 font-bold px-6 py-3 rounded shadow hover:bg-pink-50 transition" href="#catalogo">
+     Ver Catálogo
+    </a>
+   </div>
+  </section>
+  <!-- Categorías principales -->
+  <section aria-label="Categorías principales de productos" class="container mx-auto px-4 py-12 md:py-20" id="categorias">
+   <h2 class="text-3xl font-bold text-center text-pink-700 mb-10">
+    Categorías Principales
+   </h2>
+   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+    <a aria-label="Categoría Labiales" class="group block bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden" href="#catalogo">
+     <img alt="Labiales de varios colores y texturas sobre fondo blanco" class="w-full h-48 object-cover group-hover:scale-105 transition-transform" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/f0d8aa19-7abb-441f-609e-ce27e5997a21.jpg" width="400"/>
+     <div class="p-4 text-center font-semibold text-pink-700">
+      Labiales
+     </div>
+    </a>
+    <a aria-label="Categoría Bases y Correctores" class="group block bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden" href="#catalogo">
+     <img alt="Bases y correctores de piel en diferentes tonos sobre fondo blanco" class="w-full h-48 object-cover group-hover:scale-105 transition-transform" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/b2204d74-3952-4ee0-e79c-f29339e9140e.jpg" width="400"/>
+     <div class="p-4 text-center font-semibold text-pink-700">
+      Bases y Correctores
+     </div>
+    </a>
+    <a aria-label="Categoría Sombras de Ojos" class="group block bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden" href="#catalogo">
+     <img alt="Paletas de sombra de ojos coloridas y brillantes sobre fondo blanco" class="w-full h-48 object-cover group-hover:scale-105 transition-transform" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/db45af4c-b2aa-4458-7c20-43c209b25328.jpg" width="400"/>
+     <div class="p-4 text-center font-semibold text-pink-700">
+      Sombras de Ojos
+     </div>
+    </a>
+    <a aria-label="Categoría Rubores y Bronceadores" class="group block bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden" href="#catalogo">
+     <img alt="Rubores y bronceadores en tonos cálidos sobre fondo blanco" class="w-full h-48 object-cover group-hover:scale-105 transition-transform" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/f7e8ee0d-6287-40ce-86f8-ea82af57cb16.jpg" width="400"/>
+     <div class="p-4 text-center font-semibold text-pink-700">
+      Rubores y Bronceadores
+     </div>
+    </a>
+   </div>
+  </section>
+  <!-- Promociones destacadas -->
+  <section aria-label="Promociones destacadas" class="bg-pink-50 py-12 md:py-20" id="promociones">
+   <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-pink-700 mb-10 text-center">
+     Promociones Destacadas
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+     <div aria-label="Promoción Labiales 20% de descuento" class="bg-white rounded-lg shadow p-6 flex flex-col items-center text-center">
+      <img alt="Labiales en tonos rojos y rosas con etiqueta de 20% de descuento" class="w-48 h-48 object-cover rounded mb-4" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/b9e34517-110e-4ff4-7f67-0fd0994cd48f.jpg" width="300"/>
+      <h3 class="text-xl font-semibold text-pink-700 mb-2">
+       20% de descuento en Labiales
+      </h3>
+      <p class="text-gray-600">
+       Aprovecha la promoción en nuestra línea de labiales de larga
+            duración.
+      </p>
+     </div>
+     <div aria-label="Promoción Bases y Correctores 15% de descuento" class="bg-white rounded-lg shadow p-6 flex flex-col items-center text-center">
+      <img alt="Bases y correctores en diferentes tonos con etiqueta de 15% de descuento" class="w-48 h-48 object-cover rounded mb-4" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/087cc623-a60e-4932-0eed-550bb5a4f79c.jpg" width="300"/>
+      <h3 class="text-xl font-semibold text-pink-700 mb-2">
+       15% de descuento en Bases y Correctores
+      </h3>
+      <p class="text-gray-600">
+       Encuentra el tono perfecto para tu piel con nuestra promoción
+            especial.
+      </p>
+     </div>
+     <div aria-label="Promoción Paletas de Sombras 10% de descuento" class="bg-white rounded-lg shadow p-6 flex flex-col items-center text-center">
+      <img alt="Paletas de sombras de ojos coloridas con etiqueta de 10% de descuento" class="w-48 h-48 object-cover rounded mb-4" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/7310ea26-6e7b-4dc3-890e-f8965fcae0d8.jpg" width="300"/>
+      <h3 class="text-xl font-semibold text-pink-700 mb-2">
+       10% de descuento en Paletas de Sombras
+      </h3>
+      <p class="text-gray-600">
+       Dale color a tu mirada con nuestras paletas en promoción.
+      </p>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Catálogo -->
+  <section aria-label="Catálogo de productos" class="container mx-auto px-4 py-12 md:py-20" id="catalogo">
+   <h2 class="text-3xl font-bold text-pink-700 mb-10 text-center">
+    Catálogo Completo
+   </h2>
+   <!-- Filtros -->
+   <div aria-label="Filtros de catálogo" class="flex flex-col md:flex-row md:justify-between md:items-center mb-8 space-y-4 md:space-y-0">
+    <div class="flex flex-wrap gap-3 items-center">
+     <label class="font-semibold text-gray-700 dark:text-gray-300 mr-2" for="filter-type">
+      Tipo:
+     </label>
+     <select class="border border-gray-300 rounded px-3 py-1 focus:outline-none focus:ring-2 focus:ring-pink-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" id="filter-type">
+      <option value="">
+       Todos
+      </option>
+      <option value="labiales">
+       Labiales
+      </option>
+      <option value="bases">
+       Bases y Correctores
+      </option>
+      <option value="sombras">
+       Sombras de Ojos
+      </option>
+      <option value="rubores">
+       Rubores y Bronceadores
+      </option>
+     </select>
+    </div>
+    <div class="flex flex-wrap gap-3 items-center">
+     <label class="font-semibold text-gray-700 dark:text-gray-300 mr-2" for="filter-brand">
+      Marca:
+     </label>
+     <select class="border border-gray-300 rounded px-3 py-1 focus:outline-none focus:ring-2 focus:ring-pink-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" id="filter-brand">
+      <option value="">
+       Todas
+      </option>
+      <option value="marca1">
+       Marca 1
+      </option>
+      <option value="marca2">
+       Marca 2
+      </option>
+      <option value="marca3">
+       Marca 3
+      </option>
+     </select>
+    </div>
+    <div class="flex flex-wrap gap-3 items-center">
+     <label class="font-semibold text-gray-700 dark:text-gray-300 mr-2" for="filter-price">
+      Precio:
+     </label>
+     <select class="border border-gray-300 rounded px-3 py-1 focus:outline-none focus:ring-2 focus:ring-pink-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" id="filter-price">
+      <option value="">
+       Todos
+      </option>
+      <option value="0-20">
+       Hasta $20
+      </option>
+      <option value="21-50">
+       $21 - $50
+      </option>
+      <option value="51-100">
+       $51 - $100
+      </option>
+      <option value="100+">
+       Más de $100
+      </option>
+     </select>
+    </div>
+    <div class="flex flex-wrap gap-3 items-center">
+     <label class="font-semibold text-gray-700 dark:text-gray-300 mr-2" for="filter-skin-tone">
+      Tono de piel:
+     </label>
+     <select class="border border-gray-300 rounded px-3 py-1 focus:outline-none focus:ring-2 focus:ring-pink-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" id="filter-skin-tone">
+      <option value="">
+       Todos
+      </option>
+      <option value="clara">
+       Clara
+      </option>
+      <option value="media">
+       Media
+      </option>
+      <option value="morena">
+       Morena
+      </option>
+     </select>
+    </div>
+   </div>
+<!-- Productos -->
+   <div aria-live="polite" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8" id="product-list">
+    <!-- Producto 1 -->
+    <article aria-label="Labial rojo mate de Marca 1, precio 25 dólares, para piel clara y media" class="bg-white rounded-lg shadow hover:shadow-lg transition flex flex-col" data-brand="marca1" data-price="25" data-skin-tone="clara media" data-type="labiales">
+     <img alt="Labial rojo mate de tubo elegante con fondo blanco" class="w-full h-64 object-cover rounded-t-lg" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/2dee7b75-3e55-4a11-349f-73c84f1897f0.jpg" width="400"/>
+     <div class="p-4 flex flex-col flex-grow">
+      <h3 class="font-semibold text-lg text-pink-700 mb-2">
+       Labial Rojo Mate
+      </h3>
+      <p class="text-gray-600 flex-grow">
+       Labial de larga duración con acabado mate, tono rojo intenso.
+      </p>
+      <div class="mt-4 flex flex-col space-y-2">
+       <div aria-label="Tonos disponibles" class="flex flex-wrap gap-2">
+        <span aria-label="Seleccionar tono Rojo Oscuro" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #b22222" tabindex="0" title="Tono Rojo Oscuro">
+        </span>
+        <span aria-label="Seleccionar tono Rojo Claro" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #ff6347" tabindex="0" title="Tono Rojo Claro">
+        </span>
+        <span aria-label="Seleccionar tono Rojo Profundo" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #8b0000" tabindex="0" title="Tono Rojo Profundo">
+        </span>
+       </div>
+       <div class="text-xl font-bold text-pink-700">
+        $25
+       </div>
+       <button aria-label="Agregar Labial Rojo Mate al carrito" class="bg-pink-700 text-white rounded py-2 hover:bg-pink-800 transition focus:outline-none focus:ring-2 focus:ring-pink-500">
+        Agregar al carrito
+       </button>
+       <button aria-label="Ver video tutorial Labial Rojo Mate" class="video-btn mt-2 text-pink-700 hover:text-pink-900 focus:outline-none flex items-center justify-center space-x-2" data-video="https://www.w3schools.com/html/mov_bbb.mp4" type="button">
+        <i class="fas fa-play-circle">
+        </i>
+        <span>
+         Ver video
+        </span>
+       </button>
+      </div>
+     </div>
+    </article>
+    <!-- Producto 2 -->
+    <article aria-label="Base líquida tono medio de Marca 2, precio 40 dólares, para piel media y morena" class="bg-white rounded-lg shadow hover:shadow-lg transition flex flex-col" data-brand="marca2" data-price="40" data-skin-tone="media morena" data-type="bases">
+     <img alt="Base líquida en frasco transparente con gotero sobre fondo blanco" class="w-full h-64 object-cover rounded-t-lg" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/b4c4ae4f-7284-437e-4037-4284ef44aca1.jpg" width="400"/>
+     <div class="p-4 flex flex-col flex-grow">
+      <h3 class="font-semibold text-lg text-pink-700 mb-2">
+       Base Líquida Tono Medio
+      </h3>
+      <p class="text-gray-600 flex-grow">
+       Base líquida de cobertura media, acabado natural y duradero.
+      </p>
+      <div class="mt-4 flex flex-col space-y-2">
+       <div aria-label="Tonos disponibles" class="flex flex-wrap gap-2">
+        <span aria-label="Seleccionar tono Beige Claro" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #d2b48c" tabindex="0" title="Tono Beige Claro">
+        </span>
+        <span aria-label="Seleccionar tono Beige Medio" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #c68642" tabindex="0" title="Tono Beige Medio">
+        </span>
+        <span aria-label="Seleccionar tono Beige Oscuro" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #8b5e3c" tabindex="0" title="Tono Beige Oscuro">
+        </span>
+       </div>
+       <div class="text-xl font-bold text-pink-700">
+        $40
+       </div>
+       <button aria-label="Agregar Base Líquida Tono Medio al carrito" class="bg-pink-700 text-white rounded py-2 hover:bg-pink-800 transition focus:outline-none focus:ring-2 focus:ring-pink-500">
+        Agregar al carrito
+       </button>
+       <button aria-label="Ver video tutorial Base Líquida Tono Medio" class="video-btn mt-2 text-pink-700 hover:text-pink-900 focus:outline-none flex items-center justify-center space-x-2" data-video="https://www.w3schools.com/html/movie.mp4" type="button">
+        <i class="fas fa-play-circle">
+        </i>
+        <span>
+         Ver video
+        </span>
+       </button>
+      </div>
+     </div>
+    </article>
+    <!-- Producto 3 -->
+    <article aria-label="Paleta de sombras coloridas de Marca 3, precio 35 dólares, para piel clara, media y morena" class="bg-white rounded-lg shadow hover:shadow-lg transition flex flex-col" data-brand="marca3" data-price="35" data-skin-tone="clara media morena" data-type="sombras">
+     <img alt="Paleta de sombras de ojos con varios colores vibrantes sobre fondo blanco" class="w-full h-64 object-cover rounded-t-lg" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/a3775bea-a0c1-4d83-dc75-6b9388057c19.jpg" width="400"/>
+     <div class="p-4 flex flex-col flex-grow">
+      <h3 class="font-semibold text-lg text-pink-700 mb-2">
+       Paleta de Sombras Coloridas
+      </h3>
+      <p class="text-gray-600 flex-grow">
+       Paleta con 12 tonos vibrantes y pigmentados para cualquier ocasión.
+      </p>
+      <div class="mt-4 flex flex-col space-y-2">
+       <div aria-label="Tonos disponibles" class="flex flex-wrap gap-2">
+        <span aria-label="Seleccionar tono Rosa Brillante" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #ff69b4" tabindex="0" title="Tono Rosa Brillante">
+        </span>
+        <span aria-label="Seleccionar tono Púrpura" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #800080" tabindex="0" title="Tono Púrpura">
+        </span>
+        <span aria-label="Seleccionar tono Dorado" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #ffd700" tabindex="0" title="Tono Dorado">
+        </span>
+       </div>
+       <div class="text-xl font-bold text-pink-700">
+        $35
+       </div>
+       <button aria-label="Agregar Paleta de Sombras Coloridas al carrito" class="bg-pink-700 text-white rounded py-2 hover:bg-pink-800 transition focus:outline-none focus:ring-2 focus:ring-pink-500">
+        Agregar al carrito
+       </button>
+       <button aria-label="Ver video tutorial Paleta de Sombras Coloridas" class="video-btn mt-2 text-pink-700 hover:text-pink-900 focus:outline-none flex items-center justify-center space-x-2" data-video="https://www.w3schools.com/html/mov_bbb.mp4" type="button">
+        <i class="fas fa-play-circle">
+        </i>
+        <span>
+         Ver video
+        </span>
+       </button>
+      </div>
+     </div>
+    </article>
+    <!-- Producto 4 -->
+    <article aria-label="Rubor en polvo tono melocotón de Marca 1, precio 22 dólares, para piel clara y media" class="bg-white rounded-lg shadow hover:shadow-lg transition flex flex-col" data-brand="marca1" data-price="22" data-skin-tone="clara media" data-type="rubores">
+     <img alt="Rubor en polvo tono melocotón en envase redondo con espejo" class="w-full h-64 object-cover rounded-t-lg" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/cab4aa71-ae92-4b8b-7b5d-9fce697ba2d5.jpg" width="400"/>
+     <div class="p-4 flex flex-col flex-grow">
+      <h3 class="font-semibold text-lg text-pink-700 mb-2">
+       Rubor en Polvo Melocotón
+      </h3>
+      <p class="text-gray-600 flex-grow">
+       Rubor suave con acabado natural para un look fresco y radiante.
+      </p>
+      <div class="mt-4 flex flex-col space-y-2">
+       <div aria-label="Tonos disponibles" class="flex flex-wrap gap-2">
+        <span aria-label="Seleccionar tono Melocotón Claro" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #ffdab9" tabindex="0" title="Tono Melocotón Claro">
+        </span>
+        <span aria-label="Seleccionar tono Melocotón Medio" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #ff7f50" tabindex="0" title="Tono Melocotón Medio">
+        </span>
+       </div>
+       <div class="text-xl font-bold text-pink-700">
+        $22
+       </div>
+       <button aria-label="Agregar Rubor en Polvo Melocotón al carrito" class="bg-pink-700 text-white rounded py-2 hover:bg-pink-800 transition focus:outline-none focus:ring-2 focus:ring-pink-500">
+        Agregar al carrito
+       </button>
+       <button aria-label="Ver video tutorial Rubor en Polvo Melocotón" class="video-btn mt-2 text-pink-700 hover:text-pink-900 focus:outline-none flex items-center justify-center space-x-2" data-video="https://www.w3schools.com/html/movie.mp4" type="button">
+        <i class="fas fa-play-circle">
+        </i>
+        <span>
+         Ver video
+        </span>
+       </button>
+      </div>
+     </div>
+    </article>
+    <!-- Producto 5 -->
+    <article aria-label="Labial nude cremoso de Marca 2, precio 18 dólares, para piel clara y media" class="bg-white rounded-lg shadow hover:shadow-lg transition flex flex-col" data-brand="marca2" data-price="18" data-skin-tone="clara media" data-type="labiales">
+     <img alt="Labial color nude con textura cremosa en tubo elegante" class="w-full h-64 object-cover rounded-t-lg" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/7a3c3b21-b867-42b8-252e-e6162b0b345c.jpg" width="400"/>
+     <div class="p-4 flex flex-col flex-grow">
+      <h3 class="font-semibold text-lg text-pink-700 mb-2">
+       Labial Nude Cremoso
+      </h3>
+      <p class="text-gray-600 flex-grow">
+       Labial hidratante con acabado cremoso y tono nude natural.
+      </p>
+      <div class="mt-4 flex flex-col space-y-2">
+       <div aria-label="Tonos disponibles" class="flex flex-wrap gap-2">
+        <span aria-label="Seleccionar tono Nude Claro" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #f5deb3" tabindex="0" title="Tono Nude Claro">
+        </span>
+        <span aria-label="Seleccionar tono Nude Medio" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #deb887" tabindex="0" title="Tono Nude Medio">
+        </span>
+       </div>
+       <div class="text-xl font-bold text-pink-700">
+        $18
+       </div>
+       <button aria-label="Agregar Labial Nude Cremoso al carrito" class="bg-pink-700 text-white rounded py-2 hover:bg-pink-800 transition focus:outline-none focus:ring-2 focus:ring-pink-500">
+        Agregar al carrito
+       </button>
+       <button aria-label="Ver video tutorial Labial Nude Cremoso" class="video-btn mt-2 text-pink-700 hover:text-pink-900 focus:outline-none flex items-center justify-center space-x-2" data-video="https://www.w3schools.com/html/mov_bbb.mp4" type="button">
+        <i class="fas fa-play-circle">
+        </i>
+        <span>
+         Ver video
+        </span>
+       </button>
+      </div>
+     </div>
+    </article>
+    <!-- Producto 6 -->
+    <article aria-label="Corrector líquido tono claro de Marca 3, precio 55 dólares, para piel clara y media" class="bg-white rounded-lg shadow hover:shadow-lg transition flex flex-col" data-brand="marca3" data-price="55" data-skin-tone="clara media" data-type="bases">
+     <img alt="Corrector líquido en frasco con aplicador sobre fondo blanco" class="w-full h-64 object-cover rounded-t-lg" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/d20b4e18-ee16-40ef-e96e-abb33475f5f0.jpg" width="400"/>
+     <div class="p-4 flex flex-col flex-grow">
+      <h3 class="font-semibold text-lg text-pink-700 mb-2">
+       Corrector Líquido Tono Claro
+      </h3>
+      <p class="text-gray-600 flex-grow">
+       Corrector de alta cobertura para ojeras y manchas, tono claro.
+      </p>
+      <div class="mt-4 flex flex-col space-y-2">
+       <div aria-label="Tonos disponibles" class="flex flex-wrap gap-2">
+        <span aria-label="Seleccionar tono Claro" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #fff5ee" tabindex="0" title="Tono Claro">
+        </span>
+        <span aria-label="Seleccionar tono Medio" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #f0e68c" tabindex="0" title="Tono Medio">
+        </span>
+       </div>
+       <div class="text-xl font-bold text-pink-700">
+        $55
+       </div>
+       <button aria-label="Agregar Corrector Líquido Tono Claro al carrito" class="bg-pink-700 text-white rounded py-2 hover:bg-pink-800 transition focus:outline-none focus:ring-2 focus:ring-pink-500">
+        Agregar al carrito
+       </button>
+       <button aria-label="Ver video tutorial Corrector Líquido Tono Claro" class="video-btn mt-2 text-pink-700 hover:text-pink-900 focus:outline-none flex items-center justify-center space-x-2" data-video="https://www.w3schools.com/html/movie.mp4" type="button">
+        <i class="fas fa-play-circle">
+        </i>
+        <span>
+         Ver video
+        </span>
+       </button>
+      </div>
+     </div>
+    </article>
+    <!-- Producto 7 -->
+    <article aria-label="Sombra de ojos individual tono azul metálico de Marca 1, precio 28 dólares, para piel clara y media" class="bg-white rounded-lg shadow hover:shadow-lg transition flex flex-col" data-brand="marca1" data-price="28" data-skin-tone="clara media" data-type="sombras">
+     <img alt="Sombra de ojos individual en tono azul metálico con textura brillante" class="w-full h-64 object-cover rounded-t-lg" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/55da20cf-bbb8-4604-b3d1-9ba3e7f8bba2.jpg" width="400"/>
+     <div class="p-4 flex flex-col flex-grow">
+      <h3 class="font-semibold text-lg text-pink-700 mb-2">
+       Sombra Azul Metálico
+      </h3>
+      <p class="text-gray-600 flex-grow">
+       Sombra individual con acabado metálico para un look impactante.
+      </p>
+      <div class="mt-4 flex flex-col space-y-2">
+       <div aria-label="Tonos disponibles" class="flex flex-wrap gap-2">
+        <span aria-label="Seleccionar tono Azul Metálico" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #1e90ff" tabindex="0" title="Tono Azul Metálico">
+        </span>
+       </div>
+       <div class="text-xl font-bold text-pink-700">
+        $28
+       </div>
+       <button aria-label="Agregar Sombra Azul Metálico al carrito" class="bg-pink-700 text-white rounded py-2 hover:bg-pink-800 transition focus:outline-none focus:ring-2 focus:ring-pink-500">
+        Agregar al carrito
+       </button>
+       <button aria-label="Ver video tutorial Sombra Azul Metálico" class="video-btn mt-2 text-pink-700 hover:text-pink-900 focus:outline-none flex items-center justify-center space-x-2" data-video="https://www.w3schools.com/html/mov_bbb.mp4" type="button">
+        <i class="fas fa-play-circle">
+        </i>
+        <span>
+         Ver video
+        </span>
+       </button>
+      </div>
+     </div>
+    </article>
+    <!-- Producto 8 -->
+    <article aria-label="Bronceador en polvo tono dorado de Marca 2, precio 30 dólares, para piel media y morena" class="bg-white rounded-lg shadow hover:shadow-lg transition flex flex-col" data-brand="marca2" data-price="30" data-skin-tone="media morena" data-type="rubores">
+     <img alt="Bronceador en polvo tono dorado con textura suave y envase elegante" class="w-full h-64 object-cover rounded-t-lg" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/81dd6441-0984-46e0-5503-73759749fa29.jpg" width="400"/>
+     <div class="p-4 flex flex-col flex-grow">
+      <h3 class="font-semibold text-lg text-pink-700 mb-2">
+       Bronceador en Polvo Dorado
+      </h3>
+      <p class="text-gray-600 flex-grow">
+       Bronceador para un acabado natural y luminoso en tonos dorados.
+      </p>
+      <div class="mt-4 flex flex-col space-y-2">
+       <div aria-label="Tonos disponibles" class="flex flex-wrap gap-2">
+        <span aria-label="Seleccionar tono Dorado" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #daa520" tabindex="0" title="Tono Dorado">
+        </span>
+        <span aria-label="Seleccionar tono Bronce" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #b8860b" tabindex="0" title="Tono Bronce">
+        </span>
+       </div>
+       <div class="text-xl font-bold text-pink-700">
+        $30
+       </div>
+       <button aria-label="Agregar Bronceador en Polvo Dorado al carrito" class="bg-pink-700 text-white rounded py-2 hover:bg-pink-800 transition focus:outline-none focus:ring-2 focus:ring-pink-500">
+        Agregar al carrito
+       </button>
+       <button aria-label="Ver video tutorial Bronceador en Polvo Dorado" class="video-btn mt-2 text-pink-700 hover:text-pink-900 focus:outline-none flex items-center justify-center space-x-2" data-video="https://www.w3schools.com/html/movie.mp4" type="button">
+        <i class="fas fa-play-circle">
+        </i>
+        <span>
+         Ver video
+        </span>
+       </button>
+      </div>
+     </div>
+    </article>
+    <!-- Producto 9 -->
+    <article aria-label="Labial rosa brillante de Marca 3, precio 20 dólares, para piel clara y media" class="bg-white rounded-lg shadow hover:shadow-lg transition flex flex-col" data-brand="marca3" data-price="20" data-skin-tone="clara media" data-type="labiales">
+     <img alt="Labial rosa brillante con textura cremosa y envase elegante" class="w-full h-64 object-cover rounded-t-lg" height="400" loading="lazy" src="https://placehold.co/400x400/png?text=Labial+Rosa+Brillante" width="400"/>
+     <div class="p-4 flex flex-col flex-grow">
+      <h3 class="font-semibold text-lg text-pink-700 mb-2">
+       Labial Rosa Brillante
+      </h3>
+      <p class="text-gray-600 flex-grow">
+       Labial hidratante con acabado brillante y tono rosa vibrante.
+      </p>
+      <div class="mt-4 flex flex-col space-y-2">
+       <div aria-label="Tonos disponibles" class="flex flex-wrap gap-2">
+        <span aria-label="Seleccionar tono Rosa Brillante" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #ff69b4" tabindex="0" title="Tono Rosa Brillante">
+        </span>
+        <span aria-label="Seleccionar tono Rosa Intenso" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #ff1493" tabindex="0" title="Tono Rosa Intenso">
+        </span>
+       </div>
+       <div class="text-xl font-bold text-pink-700">
+        $20
+       </div>
+       <button aria-label="Agregar Labial Rosa Brillante al carrito" class="bg-pink-700 text-white rounded py-2 hover:bg-pink-800 transition focus:outline-none focus:ring-2 focus:ring-pink-500">
+        Agregar al carrito
+       </button>
+       <button aria-label="Ver video tutorial Labial Rosa Brillante" class="video-btn mt-2 text-pink-700 hover:text-pink-900 focus:outline-none flex items-center justify-center space-x-2" data-video="https://www.w3schools.com/html/mov_bbb.mp4" type="button">
+        <i class="fas fa-play-circle">
+        </i>
+        <span>
+         Ver video
+        </span>
+       </button>
+      </div>
+     </div>
+    </article>
+    <!-- Producto 10 -->
+    <article aria-label="Base en polvo tono claro de Marca 1, precio 60 dólares, para piel clara y media" class="bg-white rounded-lg shadow hover:shadow-lg transition flex flex-col" data-brand="marca1" data-price="60" data-skin-tone="clara media" data-type="bases">
+     <img alt="Base en polvo tono claro en envase redondo con espejo" class="w-full h-64 object-cover rounded-t-lg" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/e5e27410-2361-434f-ea27-aa13abe8e84c.jpg" width="400"/>
+     <div class="p-4 flex flex-col flex-grow">
+      <h3 class="font-semibold text-lg text-pink-700 mb-2">
+       Base en Polvo Tono Claro
+      </h3>
+      <p class="text-gray-600 flex-grow">
+       Base en polvo para acabado mate y cobertura ligera a media.
+      </p>
+      <div class="mt-4 flex flex-col space-y-2">
+       <div aria-label="Tonos disponibles" class="flex flex-wrap gap-2">
+        <span aria-label="Seleccionar tono Claro" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #f5f5dc" tabindex="0" title="Tono Claro">
+        </span>
+        <span aria-label="Seleccionar tono Medio" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #e0d8a7" tabindex="0" title="Tono Medio">
+        </span>
+       </div>
+       <div class="text-xl font-bold text-pink-700">
+        $60
+       </div>
+       <button aria-label="Agregar Base en Polvo Tono Claro al carrito" class="bg-pink-700 text-white rounded py-2 hover:bg-pink-800 transition focus:outline-none focus:ring-2 focus:ring-pink-500">
+        Agregar al carrito
+       </button>
+       <button aria-label="Ver video tutorial Base en Polvo Tono Claro" class="video-btn mt-2 text-pink-700 hover:text-pink-900 focus:outline-none flex items-center justify-center space-x-2" data-video="https://www.w3schools.com/html/movie.mp4" type="button">
+        <i class="fas fa-play-circle">
+        </i>
+        <span>
+         Ver video
+        </span>
+       </button>
+      </div>
+     </div>
+    </article>
+    <!-- Producto 11 -->
+    <article aria-label="Paleta de sombras neutras de Marca 2, precio 45 dólares, para piel clara, media y morena" class="bg-white rounded-lg shadow hover:shadow-lg transition flex flex-col" data-brand="marca2" data-price="45" data-skin-tone="clara media morena" data-type="sombras">
+     <img alt="Paleta de sombras de ojos en tonos neutros y tierra" class="w-full h-64 object-cover rounded-t-lg" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/8065a044-58cf-45e5-33b5-22422b30efa3.jpg" width="400"/>
+     <div class="p-4 flex flex-col flex-grow">
+      <h3 class="font-semibold text-lg text-pink-700 mb-2">
+       Paleta de Sombras Neutras
+      </h3>
+      <p class="text-gray-600 flex-grow">
+       Paleta con 10 tonos neutros para looks naturales y elegantes.
+      </p>
+      <div class="mt-4 flex flex-col space-y-2">
+       <div aria-label="Tonos disponibles" class="flex flex-wrap gap-2">
+        <span aria-label="Seleccionar tono Marrón" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #a0522d" tabindex="0" title="Tono Marrón">
+        </span>
+        <span aria-label="Seleccionar tono Beige" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #deb887" tabindex="0" title="Tono Beige">
+        </span>
+        <span aria-label="Seleccionar tono Crema" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #f5f5dc" tabindex="0" title="Tono Crema">
+        </span>
+       </div>
+       <div class="text-xl font-bold text-pink-700">
+        $45
+       </div>
+       <button aria-label="Agregar Paleta de Sombras Neutras al carrito" class="bg-pink-700 text-white rounded py-2 hover:bg-pink-800 transition focus:outline-none focus:ring-2 focus:ring-pink-500">
+        Agregar al carrito
+       </button>
+       <button aria-label="Ver video tutorial Paleta de Sombras Neutras" class="video-btn mt-2 text-pink-700 hover:text-pink-900 focus:outline-none flex items-center justify-center space-x-2" data-video="https://www.w3schools.com/html/mov_bbb.mp4" type="button">
+        <i class="fas fa-play-circle">
+        </i>
+        <span>
+         Ver video
+        </span>
+       </button>
+      </div>
+     </div>
+    </article>
+    <!-- Producto 12 -->
+    <article aria-label="Rubor líquido tono rosa suave de Marca 3, precio 27 dólares, para piel clara y media" class="bg-white rounded-lg shadow hover:shadow-lg transition flex flex-col" data-brand="marca3" data-price="27" data-skin-tone="clara media" data-type="rubores">
+     <img alt="Rubor líquido en tono rosa suave con aplicador gotero" class="w-full h-64 object-cover rounded-t-lg" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/fd10fa2e-f097-4553-1910-40d489704db1.jpg" width="400"/>
+     <div class="p-4 flex flex-col flex-grow">
+      <h3 class="font-semibold text-lg text-pink-700 mb-2">
+       Rubor Líquido Rosa Suave
+      </h3>
+      <p class="text-gray-600 flex-grow">
+       Rubor líquido para un acabado natural y duradero en tono rosa suave.
+      </p>
+      <div class="mt-4 flex flex-col space-y-2">
+       <div aria-label="Tonos disponibles" class="flex flex-wrap gap-2">
+        <span aria-label="Seleccionar tono Rosa Suave" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #ffc0cb" tabindex="0" title="Tono Rosa Suave">
+        </span>
+       </div>
+       <div class="text-xl font-bold text-pink-700">
+        $27
+       </div>
+       <button aria-label="Agregar Rubor Líquido Rosa Suave al carrito" class="bg-pink-700 text-white rounded py-2 hover:bg-pink-800 transition focus:outline-none focus:ring-2 focus:ring-pink-500">
+        Agregar al carrito
+       </button>
+       <button aria-label="Ver video tutorial Rubor Líquido Rosa Suave" class="video-btn mt-2 text-pink-700 hover:text-pink-900 focus:outline-none flex items-center justify-center space-x-2" data-video="https://www.w3schools.com/html/movie.mp4" type="button">
+        <i class="fas fa-play-circle">
+        </i>
+        <span>
+         Ver video
+        </span>
+       </button>
+      </div>
+     </div>
+    </article>
+    <!-- Producto 13 -->
+    <article aria-label="Labial coral mate de Marca 1, precio 23 dólares, para piel clara y media" class="bg-white rounded-lg shadow hover:shadow-lg transition flex flex-col" data-brand="marca1" data-price="23" data-skin-tone="clara media" data-type="labiales">
+     <img alt="Labial coral mate con textura suave y envase elegante" class="w-full h-64 object-cover rounded-t-lg" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/7f5622b1-25f0-460c-8dbe-b6b255493818.jpg" width="400"/>
+     <div class="p-4 flex flex-col flex-grow">
+      <h3 class="font-semibold text-lg text-pink-700 mb-2">
+       Labial Coral Mate
+      </h3>
+      <p class="text-gray-600 flex-grow">
+       Labial mate con tono coral vibrante y acabado duradero.
+      </p>
+      <div class="mt-4 flex flex-col space-y-2">
+       <div aria-label="Tonos disponibles" class="flex flex-wrap gap-2">
+        <span aria-label="Seleccionar tono Coral" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #ff7f50" tabindex="0" title="Tono Coral">
+        </span>
+       </div>
+       <div class="text-xl font-bold text-pink-700">
+        $23
+       </div>
+       <button aria-label="Agregar Labial Coral Mate al carrito" class="bg-pink-700 text-white rounded py-2 hover:bg-pink-800 transition focus:outline-none focus:ring-2 focus:ring-pink-500">
+        Agregar al carrito
+       </button>
+       <button aria-label="Ver video tutorial Labial Coral Mate" class="video-btn mt-2 text-pink-700 hover:text-pink-900 focus:outline-none flex items-center justify-center space-x-2" data-video="https://www.w3schools.com/html/mov_bbb.mp4" type="button">
+        <i class="fas fa-play-circle">
+        </i>
+        <span>
+         Ver video
+        </span>
+       </button>
+      </div>
+     </div>
+    </article>
+    <!-- Producto 14 -->
+    <article aria-label="Base en crema tono oscuro de Marca 2, precio 50 dólares, para piel morena" class="bg-white rounded-lg shadow hover:shadow-lg transition flex flex-col" data-brand="marca2" data-price="50" data-skin-tone="morena" data-type="bases">
+     <img alt="Base en crema tono oscuro en envase elegante con tapa" class="w-full h-64 object-cover rounded-t-lg" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/3a968ba0-d719-4834-7bb0-454655d42a42.jpg" width="400"/>
+     <div class="p-4 flex flex-col flex-grow">
+      <h3 class="font-semibold text-lg text-pink-700 mb-2">
+       Base en Crema Tono Oscuro
+      </h3>
+      <p class="text-gray-600 flex-grow">
+       Base en crema con alta cobertura y acabado natural para piel oscura.
+      </p>
+      <div class="mt-4 flex flex-col space-y-2">
+       <div aria-label="Tonos disponibles" class="flex flex-wrap gap-2">
+        <span aria-label="Seleccionar tono Oscuro" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #654321" tabindex="0" title="Tono Oscuro">
+        </span>
+       </div>
+       <div class="text-xl font-bold text-pink-700">
+        $50
+       </div>
+       <button aria-label="Agregar Base en Crema Tono Oscuro al carrito" class="bg-pink-700 text-white rounded py-2 hover:bg-pink-800 transition focus:outline-none focus:ring-2 focus:ring-pink-500">
+        Agregar al carrito
+       </button>
+       <button aria-label="Ver video tutorial Base en Crema Tono Oscuro" class="video-btn mt-2 text-pink-700 hover:text-pink-900 focus:outline-none flex items-center justify-center space-x-2" data-video="https://www.w3schools.com/html/movie.mp4" type="button">
+        <i class="fas fa-play-circle">
+        </i>
+        <span>
+         Ver video
+        </span>
+       </button>
+      </div>
+     </div>
+    </article>
+    <!-- Producto 15 -->
+    <article aria-label="Paleta de sombras mate de Marca 3, precio 38 dólares, para piel clara, media y morena" class="bg-white rounded-lg shadow hover:shadow-lg transition flex flex-col" data-brand="marca3" data-price="38" data-skin-tone="clara media morena" data-type="sombras">
+     <img alt="Paleta de sombras mate en tonos tierra y neutros" class="w-full h-64 object-cover rounded-t-lg" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/77c1ecce-041c-42b0-e1fb-1121c02161be.jpg" width="400"/>
+     <div class="p-4 flex flex-col flex-grow">
+      <h3 class="font-semibold text-lg text-pink-700 mb-2">
+       Paleta de Sombras Mate
+      </h3>
+      <p class="text-gray-600 flex-grow">
+       Paleta con 8 tonos mate para looks elegantes y naturales.
+      </p>
+      <div class="mt-4 flex flex-col space-y-2">
+       <div aria-label="Tonos disponibles" class="flex flex-wrap gap-2">
+        <span aria-label="Seleccionar tono Marrón" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #a0522d" tabindex="0" title="Tono Marrón">
+        </span>
+        <span aria-label="Seleccionar tono Beige" class="w-6 h-6 rounded-full border border-gray-300 cursor-pointer" role="button" style="background-color: #d2b48c" tabindex="0" title="Tono Beige">
+        </span>
+       </div>
+       <div class="text-xl font-bold text-pink-700">
+        $38
+       </div>
+       <button aria-label="Agregar Paleta de Sombras Mate al carrito" class="bg-pink-700 text-white rounded py-2 hover:bg-pink-800 transition focus:outline-none focus:ring-2 focus:ring-pink-500">
+        Agregar al carrito
+       </button>
+       <button aria-label="Ver video tutorial Paleta de Sombras Mate" class="video-btn mt-2 text-pink-700 hover:text-pink-900 focus:outline-none flex items-center justify-center space-x-2" data-video="https://www.w3schools.com/html/mov_bbb.mp4" type="button">
+        <i class="fas fa-play-circle">
+        </i>
+        <span>
+         Ver video
+        </span>
+       </button>
+      </div>
+     </div>
+    </article>
+   </div>
+  </section>
+  <!-- Kits personalizados -->
+  <section aria-label="Kits personalizados" class="bg-pink-50 py-12 md:py-20" id="kits">
+   <div class="container mx-auto px-4 max-w-4xl">
+    <h2 class="text-3xl font-bold text-pink-700 mb-10 text-center">
+     Crea tu Kit Personalizado 🎁
+    </h2>
+    <form class="bg-white rounded-lg shadow p-6 space-y-6" id="kit-form">
+     <p class="text-gray-700 mb-4 text-center">
+      Selecciona un producto de cada categoría para armar tu set con
+          descuento especial.
+     </p>
+     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div>
+       <label class="block font-semibold text-gray-700 dark:text-gray-300 mb-2" for="kit-base">
+        Base / Corrector
+       </label>
+       <select class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" id="kit-base" name="kit-base" required="">
+        <option value="">
+         Selecciona una base
+        </option>
+        <option data-price="40" value="Base Líquida Tono Medio">
+         Base Líquida Tono Medio - $40
+        </option>
+        <option data-price="60" value="Base en Polvo Tono Claro">
+         Base en Polvo Tono Claro - $60
+        </option>
+        <option data-price="50" value="Base en Crema Tono Oscuro">
+         Base en Crema Tono Oscuro - $50
+        </option>
+        <option data-price="55" value="Corrector Líquido Tono Claro">
+         Corrector Líquido Tono Claro - $55
+        </option>
+       </select>
+      </div>
+      <div>
+       <label class="block font-semibold text-gray-700 dark:text-gray-300 mb-2" for="kit-labial">
+        Labial
+       </label>
+       <select class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" id="kit-labial" name="kit-labial" required="">
+        <option value="">
+         Selecciona un labial
+        </option>
+        <option data-price="25" value="Labial Rojo Mate">
+         Labial Rojo Mate - $25
+        </option>
+        <option data-price="18" value="Labial Nude Cremoso">
+         Labial Nude Cremoso - $18
+        </option>
+        <option data-price="20" value="Labial Rosa Brillante">
+         Labial Rosa Brillante - $20
+        </option>
+        <option data-price="23" value="Labial Coral Mate">
+         Labial Coral Mate - $23
+        </option>
+       </select>
+      </div>
+      <div>
+       <label class="block font-semibold text-gray-700 dark:text-gray-300 mb-2" for="kit-delineador">
+        Delineador
+       </label>
+       <select class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" id="kit-delineador" name="kit-delineador" required="">
+        <option value="">
+         Selecciona un delineador
+        </option>
+        <option data-price="15" value="Delineador Negro">
+         Delineador Negro - $15
+        </option>
+        <option data-price="15" value="Delineador Marrón">
+         Delineador Marrón - $15
+        </option>
+        <option data-price="18" value="Delineador Azul">
+         Delineador Azul - $18
+        </option>
+       </select>
+      </div>
+     </div>
+     <div class="text-center">
+      <p class="text-lg font-semibold text-pink-700 mb-4" id="kit-price">
+       Precio total: $0
+      </p>
+      <button class="bg-pink-700 text-white py-3 px-6 rounded hover:bg-pink-800 transition focus:outline-none focus:ring-2 focus:ring-pink-500" type="submit">
+       Añadir Kit al carrito con 10% de descuento
+      </button>
+     </div>
+    </form>
+   </div>
+  </section>
+  <!-- Seguimiento de pedidos -->
+  <section aria-label="Seguimiento de pedidos en tiempo real" class="container mx-auto px-4 py-12 md:py-20 max-w-3xl" id="seguimiento">
+   <h2 class="text-3xl font-bold text-pink-700 mb-10 text-center">
+    Seguimiento de Pedido 📦
+   </h2>
+   <form class="bg-white rounded-lg shadow p-6 space-y-6" id="tracking-form">
+    <label class="block font-semibold text-gray-700 dark:text-gray-300" for="order-number">
+     Número de pedido
+    </label>
+    <input class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" id="order-number" name="order-number" placeholder="Ejemplo: 12345" required="" type="text"/>
+    <button class="w-full bg-pink-700 text-white py-3 rounded hover:bg-pink-800 transition focus:outline-none focus:ring-2 focus:ring-pink-500" type="submit">
+     Consultar estado
+    </button>
+   </form>
+   <div class="mt-6 p-4 bg-pink-50 rounded text-pink-700 font-semibold text-center hidden" id="tracking-result" role="alert">
+   </div>
+  </section>
+  <!-- Probadors virtuales -->
+  <section aria-label="Probador virtual de maquillaje" class="bg-pink-50 py-12 md:py-20" id="probador">
+   <div class="container mx-auto px-4 max-w-4xl">
+    <h2 class="text-3xl font-bold text-pink-700 mb-10 text-center">
+     Probador Virtual 💄
+    </h2>
+    <p class="text-gray-700 mb-6 text-center max-w-xl mx-auto">
+     Sube tu foto y prueba diferentes tonos de labiales y sombras.
+    </p>
+    <div class="bg-white rounded-lg shadow p-6 flex flex-col md:flex-row items-center md:space-x-6 space-y-6 md:space-y-0">
+     <div class="flex flex-col items-center w-full md:w-1/2">
+      <label class="cursor-pointer bg-pink-700 text-white px-4 py-2 rounded hover:bg-pink-800 transition focus:outline-none focus:ring-2 focus:ring-pink-500" for="upload-photo">
+       Subir Foto
+      </label>
+      <input accept="image/*" aria-describedby="upload-desc" class="hidden" id="upload-photo" type="file"/>
+      <p class="mt-2 text-sm text-gray-600 dark:text-gray-400 text-center" id="upload-desc">
+       Formatos aceptados: JPG, PNG.
+      </p>
+      <img alt="Foto del rostro del usuario para probador virtual" class="mt-4 rounded max-h-64 object-contain hidden" id="user-photo" src=""/>
+     </div>
+     <div class="w-full md:w-1/2 space-y-4">
+      <div>
+       <label class="block font-semibold text-gray-700 dark:text-gray-300 mb-2" for="virtual-lipstick">
+        Labial
+       </label>
+       <select class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" id="virtual-lipstick">
+        <option value="">
+         Selecciona un labial
+        </option>
+        <option value="#b22222">
+         Rojo Oscuro
+        </option>
+        <option value="#ff6347">
+         Rojo Claro
+        </option>
+        <option value="#8b0000">
+         Rojo Profundo
+        </option>
+        <option value="#f5deb3">
+         Nude Claro
+        </option>
+        <option value="#deb887">
+         Nude Medio
+        </option>
+        <option value="#ff69b4">
+         Rosa Brillante
+        </option>
+        <option value="#ff7f50">
+         Coral
+        </option>
+       </select>
+      </div>
+      <div>
+       <label class="block font-semibold text-gray-700 dark:text-gray-300 mb-2" for="virtual-eyeshadow">
+        Sombra de ojos
+       </label>
+       <select class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" id="virtual-eyeshadow">
+        <option value="">
+         Selecciona una sombra
+        </option>
+        <option value="#ff69b4">
+         Rosa Brillante
+        </option>
+        <option value="#800080">
+         Púrpura
+        </option>
+        <option value="#ffd700">
+         Dorado
+        </option>
+        <option value="#1e90ff">
+         Azul Metálico
+        </option>
+        <option value="#a0522d">
+         Marrón
+        </option>
+        <option value="#d2b48c">
+         Beige
+        </option>
+       </select>
+      </div>
+      <button class="w-full bg-pink-700 text-white py-3 rounded hover:bg-pink-800 transition focus:outline-none focus:ring-2 focus:ring-pink-500" id="apply-virtual-makeup">
+       Aplicar maquillaje virtual
+      </button>
+      <button class="w-full bg-gray-300 text-gray-700 py-3 rounded hover:bg-gray-400 transition focus:outline-none focus:ring-2 focus:ring-pink-500" id="reset-virtual-makeup">
+       Resetear
+      </button>
+     </div>
+    </div>
+    <canvas aria-label="Canvas para probador virtual" class="mt-6 mx-auto rounded shadow max-w-full" id="virtual-canvas" style="display:none">
+    </canvas>
+   </div>
+  </section>
+  <!-- Carrito lateral -->
+  <aside aria-hidden="true" aria-label="Carrito de compras" class="fixed top-0 right-0 h-full w-80 bg-white shadow-lg transform translate-x-full transition-transform z-50 flex flex-col dark:bg-gray-900 dark:text-gray-200" id="cart-sidebar">
+   <header class="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
+    <h3 class="text-xl font-bold text-pink-700">
+     Tu Carrito
+    </h3>
+    <button aria-label="Cerrar carrito" class="text-gray-600 hover:text-pink-600 focus:outline-none dark:text-gray-400 dark:hover:text-pink-400" id="close-cart">
+     <i class="fas fa-times fa-lg">
+     </i>
+    </button>
+   </header>
+   <div class="flex-grow overflow-y-auto p-4 space-y-4" id="cart-items" tabindex="0">
+    <p class="text-gray-500 text-center dark:text-gray-400">
+     No hay productos en el carrito.
+    </p>
+   </div>
+   <footer class="p-4 border-t border-gray-200 dark:border-gray-700">
+    <div class="flex justify-between font-semibold text-lg text-pink-700 mb-4">
+     <span>
+      Total:
+     </span>
+     <span id="cart-total">
+      $0
+     </span>
+    </div>
+    <button aria-label="Proceder al pago" class="w-full bg-pink-700 text-white py-3 rounded hover:bg-pink-800 transition focus:outline-none focus:ring-2 focus:ring-pink-500" disabled="" id="checkout-button">
+     Proceder al Pago
+    </button>
+   </footer>
+  </aside>
+  <!-- Proceso de compra modal -->
+  <div aria-labelledby="checkout-title" aria-modal="true" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-60" id="checkout-modal" role="dialog">
+   <div class="bg-white rounded-lg max-w-lg w-full p-6 max-h-[90vh] overflow-y-auto relative dark:bg-gray-800 dark:text-gray-200">
+    <button aria-label="Cerrar proceso de compra" class="absolute top-4 right-4 text-gray-600 hover:text-pink-600 focus:outline-none dark:text-gray-400 dark:hover:text-pink-400" id="close-checkout">
+     <i class="fas fa-times fa-lg">
+     </i>
+    </button>
+    <h2 class="text-2xl font-bold text-pink-700 mb-6 text-center" id="checkout-title">
+     Proceso de Compra
+    </h2>
+    <form class="space-y-6" id="checkout-form" novalidate="">
+     <fieldset>
+      <legend class="font-semibold text-gray-700 mb-2 dark:text-gray-300">
+       Datos de envío
+      </legend>
+      <div class="space-y-4">
+       <div>
+        <label class="block text-gray-700 font-medium mb-1 dark:text-gray-300" for="name">
+         Nombre completo
+        </label>
+        <input class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" id="name" name="name" required="" type="text"/>
+       </div>
+       <div>
+        <label class="block text-gray-700 font-medium mb-1 dark:text-gray-300" for="email">
+         Correo electrónico
+        </label>
+        <input class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" id="email" name="email" required="" type="email"/>
+       </div>
+       <div>
+        <label class="block text-gray-700 font-medium mb-1 dark:text-gray-300" for="address">
+         Dirección
+        </label>
+        <input class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" id="address" name="address" required="" type="text"/>
+       </div>
+       <div>
+        <label class="block text-gray-700 font-medium mb-1 dark:text-gray-300" for="phone">
+         Teléfono
+        </label>
+        <input class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200" id="phone" name="phone" required="" type="tel"/>
+       </div>
+      </div>
+     </fieldset>
+     <fieldset>
+      <legend class="font-semibold text-gray-700 mb-2 dark:text-gray-300">
+       Método de pago
+      </legend>
+      <div class="space-y-3">
+       <label class="inline-flex items-center">
+        <input class="form-radio text-pink-600" name="payment" required="" type="radio" value="tarjeta"/>
+        <span class="ml-2">
+         Tarjeta de crédito/débito
+        </span>
+       </label>
+       <label class="inline-flex items-center">
+        <input class="form-radio text-pink-600" name="payment" type="radio" value="paypal"/>
+        <span class="ml-2">
+         PayPal
+        </span>
+       </label>
+       <label class="inline-flex items-center">
+        <input class="form-radio text-pink-600" name="payment" type="radio" value="transferencia"/>
+        <span class="ml-2">
+         Transferencia bancaria
+        </span>
+       </label>
+      </div>
+     </fieldset>
+     <button class="w-full bg-pink-700 text-white py-3 rounded hover:bg-pink-800 transition focus:outline-none focus:ring-2 focus:ring-pink-500" type="submit">
+      Confirmar Pedido
+     </button>
+    </form>
+   </div>
+  </div>
+  <!-- Sección Tendencias de nuestras chicas MakeGirly -->
+  <section aria-label="Tendencias de nuestras chicas MakeGirly" class="container mx-auto px-4 py-12 md:py-20 max-w-6xl" id="tendencias">
+   <h2 class="text-3xl font-bold text-pink-700 mb-10 text-center">
+    Tendencias de nuestras chicas MakeGirly 🧑‍🤝‍🧑
+   </h2>
+   <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4" role="list">
+    <article aria-label="Foto y reseña de clienta Ana con labial rojo mate" class="bg-white rounded-lg shadow overflow-hidden cursor-pointer group relative" role="listitem" tabindex="0">
+     <img alt="Ana, mujer joven con labial rojo mate y sonrisa radiante" class="w-full h-48 object-cover" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/3528301c-d25a-47d4-2dd0-dd1bdf393dcc.jpg" width="400"/>
+     <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition flex flex-col justify-center items-center p-4 text-white text-center">
+      <p class="font-semibold mb-2">
+       "Me encanta el labial rojo mate, dura todo el día y se ve increíble."
+      </p>
+      <p class="italic text-sm">
+       - Ana Gómez
+      </p>
+     </div>
+    </article>
+    <article aria-label="Foto y reseña de clienta Lucia con paleta de sombras" class="bg-white rounded-lg shadow overflow-hidden cursor-pointer group relative" role="listitem" tabindex="0">
+     <img alt="Lucia, mujer joven con paleta de sombras coloridas y sonrisa cálida" class="w-full h-48 object-cover" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/2a2877dc-adf8-4394-9f43-3c1f8ff97711.jpg" width="400"/>
+     <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition flex flex-col justify-center items-center p-4 text-white text-center">
+      <p class="font-semibold mb-2">
+       "Las sombras son súper pigmentadas y los colores me encantan."
+      </p>
+      <p class="italic text-sm">
+       - Lucia Fernández
+      </p>
+     </div>
+    </article>
+    <article aria-label="Foto y reseña de clienta Carla con rubor melocotón" class="bg-white rounded-lg shadow overflow-hidden cursor-pointer group relative" role="listitem" tabindex="0">
+     <img alt="Carla, mujer joven con rubor melocotón y sonrisa natural" class="w-full h-48 object-cover" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/5b73559a-5a70-4493-589a-0043a677ac6d.jpg" width="400"/>
+     <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition flex flex-col justify-center items-center p-4 text-white text-center">
+      <p class="font-semibold mb-2">
+       "El rubor melocotón me da un look fresco y natural, ¡me encanta!"
+      </p>
+      <p class="italic text-sm">
+       - Carla Méndez
+      </p>
+     </div>
+    </article>
+    <article aria-label="Foto y reseña de clienta Sofía con labial nude cremoso" class="bg-white rounded-lg shadow overflow-hidden cursor-pointer group relative" role="listitem" tabindex="0">
+     <img alt="Sofía, mujer joven con labial nude cremoso y expresión elegante" class="w-full h-48 object-cover" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/136c786d-6965-4e76-fa60-7cb6d68e7052.jpg" width="400"/>
+     <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition flex flex-col justify-center items-center p-4 text-white text-center">
+      <p class="font-semibold mb-2">
+       "El labial nude es perfecto para cualquier ocasión, muy hidratante."
+      </p>
+      <p class="italic text-sm">
+       - Sofía López
+      </p>
+     </div>
+    </article>
+   </div>
+  </section>
+  <!-- Calendario de lanzamientos -->
+  <section aria-label="Calendario de lanzamientos" class="container mx-auto px-4 py-12 md:py-20 max-w-4xl" id="calendario">
+   <h2 class="text-3xl font-bold text-pink-700 mb-10 text-center">
+    Calendario de Lanzamientos 📅
+   </h2>
+   <ul class="bg-white rounded-lg shadow divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
+    <li class="p-4 flex justify-between items-center">
+     <span class="font-semibold text-gray-800 dark:text-gray-200">
+      2024-07-01
+     </span>
+     <span class="text-pink-700 font-semibold">
+      Nueva paleta de sombras
+     </span>
+    </li>
+    <li class="p-4 flex justify-between items-center">
+     <span class="font-semibold text-gray-800 dark:text-gray-200">
+      2024-08-15
+     </span>
+     <span class="text-pink-700 font-semibold">
+      Línea de labiales mate
+     </span>
+    </li>
+    <li class="p-4 flex justify-between items-center">
+     <span class="font-semibold text-gray-800 dark:text-gray-200">
+      2024-09-10
+     </span>
+     <span class="text-pink-700 font-semibold">
+      Bases para piel sensible
+     </span>
+    </li>
+    <li class="p-4 flex justify-between items-center">
+     <span class="font-semibold text-gray-800 dark:text-gray-200">
+      2024-10-05
+     </span>
+     <span class="text-pink-700 font-semibold">
+      Kit edición limitada
+     </span>
+    </li>
+   </ul>
+  </section>
+  <!-- Políticas -->
+  <section aria-label="Políticas de envío, devoluciones y privacidad" class="container mx-auto px-4 py-12 md:py-20" id="politicas">
+   <h2 class="text-3xl font-bold text-pink-700 mb-10 text-center">
+    Políticas
+   </h2>
+   <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-gray-700 dark:text-gray-300">
+    <article>
+     <h3 class="text-xl font-semibold mb-3 text-pink-700">
+      Envíos
+     </h3>
+     <p>
+      Realizamos envíos a todo el país con un tiempo estimado de 3 a 7 días
+          hábiles. El costo de envío varía según la ubicación y el peso del
+          pedido.
+     </p>
+    </article>
+    <article>
+     <h3 class="text-xl font-semibold mb-3 text-pink-700">
+      Devoluciones
+     </h3>
+     <p>
+      Aceptamos devoluciones dentro de los 15 días posteriores a la compra,
+          siempre que el producto esté en condiciones originales y sin uso.
+          Contacta con nuestro soporte para iniciar el proceso.
+     </p>
+    </article>
+    <article>
+     <h3 class="text-xl font-semibold mb-3 text-pink-700">
+      Privacidad
+     </h3>
+     <p>
+      Protegemos tus datos personales y no los compartimos con terceros.
+          Utilizamos la información solo para procesar pedidos y mejorar tu
+          experiencia.
+     </p>
+    </article>
+   </div>
+  </section>
+  <!-- Reseñas de clientes -->
+  <section aria-label="Reseñas de clientes" class="bg-pink-50 py-12 md:py-20" id="reseñas">
+   <div class="container mx-auto px-4 max-w-5xl">
+    <h2 class="text-3xl font-bold text-pink-700 mb-10 text-center">
+     Reseñas de Clientes
+    </h2>
+    <div class="space-y-8">
+     <article aria-label="Reseña de cliente Ana Gómez" class="bg-white rounded-lg shadow p-6 flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6 dark:bg-gray-800 dark:text-gray-200">
+      <img alt="Retrato de Ana Gómez, mujer joven con cabello castaño y sonrisa amable" class="w-24 h-24 rounded-full object-cover" height="100" loading="lazy" src="https://storage.googleapis.com/a1aa/image/4c9a9c87-1fb6-41b5-581c-d9296b5a7524.jpg" width="100"/>
+      <div>
+       <h3 class="font-semibold text-lg text-pink-700">
+        Ana Gómez
+       </h3>
+       <div aria-label="Calificación 5 estrellas" class="flex items-center text-yellow-400 mb-2">
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+       </div>
+       <p class="text-gray-700 dark:text-gray-300">
+        Me encantan los productos, la calidad es excelente y el envío fue
+              rápido. ¡Recomiendo mucho esta tienda!
+       </p>
+      </div>
+     </article>
+     <article aria-label="Reseña de cliente Carlos Martínez" class="bg-white rounded-lg shadow p-6 flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6 dark:bg-gray-800 dark:text-gray-200">
+      <img alt="Retrato de Carlos Martínez, hombre adulto con barba y expresión amigable" class="w-24 h-24 rounded-full object-cover" height="100" loading="lazy" src="https://storage.googleapis.com/a1aa/image/4c598b56-3885-4299-b910-9c8f9dc9fc4d.jpg" width="100"/>
+      <div>
+       <h3 class="font-semibold text-lg text-pink-700">
+        Carlos Martínez
+       </h3>
+       <div aria-label="Calificación 4 estrellas" class="flex items-center text-yellow-400 mb-2">
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="far fa-star">
+        </i>
+       </div>
+       <p class="text-gray-700 dark:text-gray-300">
+        Buena variedad de productos y atención al cliente muy amable.
+              Volveré a comprar.
+       </p>
+      </div>
+     </article>
+     <article aria-label="Reseña de cliente Lucia Fernández" class="bg-white rounded-lg shadow p-6 flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6 dark:bg-gray-800 dark:text-gray-200">
+      <img alt="Retrato de Lucia Fernández, mujer joven con cabello rubio y sonrisa cálida" class="w-24 h-24 rounded-full object-cover" height="100" loading="lazy" src="https://storage.googleapis.com/a1aa/image/82960884-65f9-4c0e-aefd-8b509d46bdeb.jpg" width="100"/>
+      <div>
+       <h3 class="font-semibold text-lg text-pink-700">
+        Lucia Fernández
+       </h3>
+       <div aria-label="Calificación 5 estrellas" class="flex items-center text-yellow-400 mb-2">
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+       </div>
+       <p class="text-gray-700 dark:text-gray-300">
+        Los tonos son perfectos para mi piel y la calidad supera mis
+              expectativas. ¡Muy feliz con mi compra!
+       </p>
+      </div>
+     </article>
+    </div>
+   </div>
+  </section>
+  <!-- Panel de usuario -->
+  <section aria-label="Panel de usuario" class="container mx-auto px-4 py-12 md:py-20 max-w-4xl" id="usuario" style="display:none;">
+   <h2 class="text-3xl font-bold text-pink-700 mb-10 text-center">
+    Mi Perfil
+   </h2>
+   <div class="bg-white rounded-lg shadow p-6 dark:bg-gray-800 dark:text-gray-200 max-w-3xl mx-auto">
+    <div class="flex flex-col items-center space-y-4 mb-8">
+     <img alt="Foto de perfil del usuario" class="w-32 h-32 rounded-full object-cover border-4 border-pink-700" height="128" id="profile-photo" src="https://storage.googleapis.com/a1aa/image/a3e5f9f8-15dd-4faa-b37f-65f7b37be823.jpg" width="128"/>
+     <h3 class="text-xl font-semibold" id="profile-email">
+      usuario@ejemplo.com
+     </h3>
+    </div>
+    <h3 class="text-xl font-semibold text-pink-700 mb-4">
+     Historial de Compras
+    </h3>
+    <ul class="divide-y divide-gray-200 dark:divide-gray-700 mb-8" id="profile-orders" tabindex="0">
+     <!-- Pedidos se agregan dinámicamente -->
+    </ul>
+    <h3 class="text-xl font-semibold text-pink-700 mb-4">
+     Pedidos
+    </h3>
+    <ul class="divide-y divide-gray-200 dark:divide-gray-700" id="profile-pedidos" tabindex="0">
+     <!-- Pedidos se agregan dinámicamente -->
+    </ul>
+    <button class="mt-8 w-full bg-pink-700 text-white py-3 rounded hover:bg-pink-800 transition focus:outline-none focus:ring-2 focus:ring-pink-500" id="close-profile">
+     Cerrar Perfil
+    </button>
+   </div>
+  </section>
+  <!-- Soporte y contacto -->
+  <section aria-label="Soporte y contacto" class="bg-white border-t border-gray-200 py-12 md:py-20 dark:bg-gray-900 dark:border-gray-700" id="soporte">
+   <div class="container mx-auto px-4 max-w-4xl text-center space-y-6 dark:text-gray-300">
+    <h2 class="text-3xl font-bold text-pink-700">
+     Soporte y Contacto
+    </h2>
+    <p>
+     ¿Tienes dudas o necesitas ayuda? Contáctanos por chat, WhatsApp o correo
+        electrónico. También síguenos en nuestras redes sociales para estar al
+        día con novedades y promociones.
+    </p>
+    <div class="flex justify-center space-x-6 text-pink-700 text-3xl">
+     <a aria-label="Contactar por WhatsApp" class="hover:text-pink-900 transition" href="https://wa.me/9171382531" rel="noopener noreferrer" target="_blank">
+      <i class="fab fa-whatsapp">
+      </i>
+     </a>
+     <a aria-label="Enviar correo electrónico" class="hover:text-pink-900 transition" href="mailto:mrodriguez22@tab.edu.conalep.mx.com">
+      <i class="fas fa-envelope">
+      </i>
+     </a>
+     <a aria-label="Instagram" class="hover:text-pink-900 transition" href="https://www.instagram.com/stylea__j?igsh=cTloZWZ5b2E1dzcy" rel="noopener noreferrer" target="_blank">
+      <i class="fab fa-instagram">
+      </i>
+     </a>
+     <a aria-label="TikTok" class="hover:text-pink-900 transition" href="https://tiktok.com/@makegirl" rel="noopener noreferrer" target="_blank">
+      <i class="fab fa-tiktok">
+      </i>
+     </a>
+     <a aria-label="Facebook" class="hover:text-pink-900 transition" href="https://www.facebook.com/mary.rodriguez.762591" rel="noopener noreferrer" target="_blank">
+      <i class="fab fa-facebook">
+      </i>
+     </a>
+    </div>
+   </div>
+  </section>
+  <!-- Blog -->
+  <section aria-label="Blog de consejos de maquillaje" class="container mx-auto px-4 py-12 md:py-20 max-w-6xl" id="blog">
+   <h2 class="text-3xl font-bold text-pink-700 mb-10 text-center">
+    Blog de Maquillaje
+   </h2>
+   <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <article aria-label="Artículo: 5 consejos para un maquillaje duradero" class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden flex flex-col dark:bg-gray-800 dark:text-gray-200">
+     <img alt="Primer plano de rostro femenino con maquillaje duradero y acabado impecable" class="w-full h-48 object-cover" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/83bb3fcc-7b81-47d8-4b51-73a442c2c4a5.jpg" width="600"/>
+     <div class="p-6 flex flex-col flex-grow">
+      <h3 class="text-xl font-semibold text-pink-700 mb-3">
+       5 consejos para un maquillaje duradero
+      </h3>
+      <p class="text-gray-700 flex-grow dark:text-gray-300">
+       Descubre cómo hacer que tu maquillaje dure todo el día con estos
+            sencillos consejos.
+      </p>
+      <button class="mt-4 text-pink-700 font-semibold hover:underline self-start read-more-btn" data-content="1. Usa una prebase para preparar tu piel. 2. Aplica base y corrector con esponja húmeda para mejor acabado. 3. Sella con polvo traslúcido. 4. Usa spray fijador para prolongar la duración. 5. Evita tocar tu rostro durante el día." data-title="5 consejos para un maquillaje duradero" type="button">
+       Leer más
+      </button>
+     </div>
+    </article>
+    <article aria-label="Artículo: Cómo elegir el tono perfecto de base" class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden flex flex-col dark:bg-gray-800 dark:text-gray-200">
+     <img alt="Muestra de diferentes tonos de base de maquillaje en la piel de una mano" class="w-full h-48 object-cover" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/38b01cf3-9d2e-4afc-65b5-0cf95496ebe5.jpg" width="600"/>
+     <div class="p-6 flex flex-col flex-grow">
+      <h3 class="text-xl font-semibold text-pink-700 mb-3">
+       Cómo elegir el tono perfecto de base
+      </h3>
+      <p class="text-gray-700 flex-grow dark:text-gray-300">
+       Aprende a seleccionar la base que mejor se adapte a tu tono y tipo
+            de piel.
+      </p>
+      <button class="mt-4 text-pink-700 font-semibold hover:underline self-start read-more-btn" data-content="1. Identifica tu subtono de piel (frío, cálido o neutro). 2. Prueba la base en la mandíbula para ver si se funde con tu piel. 3. Considera la cobertura y acabado que prefieres. 4. Consulta con un experto si tienes dudas." data-title="Cómo elegir el tono perfecto de base" type="button">
+       Leer más
+      </button>
+     </div>
+    </article>
+    <article aria-label="Artículo: Tendencias de maquillaje para 2024" class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden flex flex-col dark:bg-gray-800 dark:text-gray-200">
+     <img alt="Modelo con maquillaje moderno y colores vibrantes representando tendencias 2024" class="w-full h-48 object-cover" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/0c70e875-fa00-4966-c186-5699ca2ea3b9.jpg" width="600"/>
+     <div class="p-6 flex flex-col flex-grow">
+      <h3 class="text-xl font-semibold text-pink-700 mb-3">
+       Tendencias de maquillaje para 2024
+      </h3>
+      <p class="text-gray-700 flex-grow dark:text-gray-300">
+       Conoce las últimas tendencias en maquillaje para estar siempre a la
+            moda.
+      </p>
+      <button class="mt-4 text-pink-700 font-semibold hover:underline self-start read-more-btn" data-content="1. Colores vibrantes y metálicos. 2. Piel natural y luminosa. 3. Delineados gráficos y creativos. 4. Labios en tonos intensos y mate. 5. Uso de productos multifuncionales." data-title="Tendencias de maquillaje para 2024" type="button">
+       Leer más
+      </button>
+     </div>
+    </article>
+   </div>
+  </section>
+  <!-- Newsletter -->
+  <section aria-label="Newsletter con consejos y novedades" class="bg-pink-700 py-12 md:py-20">
+   <div class="container mx-auto px-4 max-w-3xl text-center text-white">
+    <h2 class="text-3xl font-bold mb-6">
+     Suscríbete a nuestro Newsletter 📬
+    </h2>
+    <p class="mb-6 max-w-xl mx-auto">
+     Recibe semanalmente tips de maquillaje, cuidado de la piel y avisos de
+        promociones exclusivas.
+    </p>
+    <form class="flex flex-col sm:flex-row justify-center gap-4 max-w-xl mx-auto" id="newsletter-form">
+     <input class="w-full sm:flex-1 border border-pink-300 rounded px-4 py-3 text-pink-900 focus:outline-none focus:ring-2 focus:ring-pink-300" id="newsletter-email" name="newsletter-email" placeholder="tuemail@ejemplo.com" required="" type="email"/>
+     <button class="bg-pink-900 hover:bg-pink-800 text-white font-semibold px-6 py-3 rounded transition focus:outline-none focus:ring-2 focus:ring-pink-300" type="submit">
+      Suscribirse
+     </button>
+    </form>
+    <p class="mt-4 font-semibold hidden" id="newsletter-message">
+    </p>
+   </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-pink-700 text-white py-8 mt-auto">
+   <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+    <p class="text-sm">
+     © 2024 MakeGirl. Todos los derechos reservados.
+    </p>
+    <div class="flex space-x-6 mt-4 md:mt-0">
+     <a aria-label="Instagram" class="hover:text-pink-300 transition" href="https://www.instagram.com/stylea__j?igsh=cTloZWZ5b2E1dzcy" rel="noopener noreferrer" target="_blank">
+      <i class="fab fa-instagram fa-lg">
+      </i>
+     </a>
+     <a aria-label="TikTok" class="hover:text-pink-300 transition" href="https://tiktok.com/@makegirl" rel="noopener noreferrer" target="_blank">
+      <i class="fab fa-tiktok fa-lg">
+      </i>
+     </a>
+     <a aria-label="Facebook" class="hover:text-pink-300 transition" href="https://www.facebook.com/share/1ZaetvjfmJ/" rel="noopener noreferrer" target="_blank">
+      <i class="fab fa-facebook fa-lg">
+      </i>
+     </a>
+    </div>
+   </div>
+  </footer>
+  <!-- Video modal -->
+  <div aria-labelledby="video-modal-title" aria-modal="true" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 hidden z-80" id="video-modal" role="dialog">
+   <div class="relative w-full max-w-3xl rounded-lg overflow-hidden">
+    <button aria-label="Cerrar video" class="absolute top-2 right-2 text-white text-3xl hover:text-pink-400 focus:outline-none" id="close-video">
+     ×
+    </button>
+    <video class="w-full h-auto" controls="" id="video-player" preload="metadata">
+    </video>
+   </div>
+  </div>
+  <!-- Blog read more modal -->
+  <div aria-labelledby="blog-modal-title" aria-modal="true" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 hidden z-90" id="blog-modal" role="dialog">
+   <div class="bg-white rounded-lg max-w-3xl w-full p-6 max-h-[90vh] overflow-y-auto relative dark:bg-gray-800 dark:text-gray-200">
+    <button aria-label="Cerrar artículo" class="absolute top-4 right-4 text-gray-600 hover:text-pink-600 focus:outline-none dark:text-gray-400 dark:hover:text-pink-400" id="close-blog-modal">
+     <i class="fas fa-times fa-lg">
+     </i>
+    </button>
+    <h2 class="text-2xl font-bold text-pink-700 mb-6" id="blog-modal-title">
+    </h2>
+    <p class="whitespace-pre-line" id="blog-modal-content">
+    </p>
+   </div>
+  </div>
+  <script>
+   // Theme toggle
+    const toggleThemeBtn = document.getElementById("toggle-theme");
+    const body = document.body;
+    const header = document.getElementById("header");
+
+    function setTheme(theme) {
+      if (theme === "dark") {
+        body.classList.add("dark");
+        body.setAttribute("data-theme", "dark");
+        header.classList.add("dark");
+        toggleThemeBtn.innerHTML = '<i class="fas fa-sun"></i>';
+      } else {
+        body.classList.remove("dark");
+        body.setAttribute("data-theme", "light");
+        header.classList.remove("dark");
+        toggleThemeBtn.innerHTML = '<i class="fas fa-moon"></i>';
+      }
+      localStorage.setItem("theme", theme);
+    }
+
+    toggleThemeBtn.addEventListener("click", () => {
+      const currentTheme = body.getAttribute("data-theme");
+      if (currentTheme === "light") {
+        setTheme("dark");
+      } else {
+        setTheme("light");
+      }
+    });
+
+    // Load theme from localStorage
+    const savedTheme = localStorage.getItem("theme") || "light";
+    setTheme(savedTheme);
+
+    // Mobile menu toggle
+    const menuButton = document.getElementById("menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+    menuButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // Cart sidebar toggle
+    const cartButton = document.getElementById("cart-button");
+    const cartSidebar = document.getElementById("cart-sidebar");
+    const closeCartButton = document.getElementById("close-cart");
+    const checkoutButton = document.getElementById("checkout-button");
+    const checkoutModal = document.getElementById("checkout-modal");
+    const closeCheckoutButton = document.getElementById("close-checkout");
+    const checkoutForm = document.getElementById("checkout-form");
+    const cartItemsContainer = document.getElementById("cart-items");
+    const cartCount = document.getElementById("cart-count");
+    const cartTotal = document.getElementById("cart-total");
+
+    let cart = [];
+
+    function updateCartUI() {
+      cartCount.textContent = cart.length;
+      if (cart.length === 0) {
+        cartItemsContainer.innerHTML =
+          '<p class="text-gray-500 text-center dark:text-gray-400">No hay productos en el carrito.</p>';
+        checkoutButton.disabled = true;
+        cartTotal.textContent = "$0";
+        return;
+      }
+      checkoutButton.disabled = false;
+      let total = 0;
+      cartItemsContainer.innerHTML = "";
+      cart.forEach((item, index) => {
+        total += item.price;
+        const itemDiv = document.createElement("div");
+        itemDiv.className =
+          "flex justify-between items-center border-b border-gray-200 dark:border-gray-700 pb-2";
+        itemDiv.innerHTML = `
+          <div>
+            <p class="font-semibold text-gray-800 dark:text-gray-200">${item.name}</p>
+            <p class="text-gray-600 text-sm dark:text-gray-400">Precio: $${item.price}</p>
+          </div>
+          <button aria-label="Eliminar ${item.name} del carrito" class="text-pink-700 hover:text-pink-900 focus:outline-none" data-index="${index}">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        `;
+        cartItemsContainer.appendChild(itemDiv);
+      });
+      cartTotal.textContent = `$${total.toFixed(2)}`;
+
+      // Add event listeners to remove buttons
+      const removeButtons = cartItemsContainer.querySelectorAll("button");
+      removeButtons.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          const idx = e.currentTarget.getAttribute("data-index");
+          cart.splice(idx, 1);
+          updateCartUI();
+        });
+      });
+    }
+
+    cartButton.addEventListener("click", () => {
+      cartSidebar.setAttribute("aria-hidden", "false");
+      cartSidebar.classList.remove("translate-x-full");
+      cartSidebar.classList.add("translate-x-0");
+    });
+
+    closeCartButton.addEventListener("click", () => {
+      cartSidebar.setAttribute("aria-hidden", "true");
+      cartSidebar.classList.remove("translate-x-0");
+      cartSidebar.classList.add("translate-x-full");
+    });
+
+    // Add to cart buttons
+    function addProductToCart(name, price) {
+      cart.push({ name, price });
+      updateCartUI();
+      cartSidebar.setAttribute("aria-hidden", "false");
+      cartSidebar.classList.remove("translate-x-full");
+      cartSidebar.classList.add("translate-x-0");
+    }
+
+    const addToCartButtons = document.querySelectorAll(
+      'button[aria-label^="Agregar"]'
+    );
+    addToCartButtons.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const article = e.currentTarget.closest("article");
+        const name = article.querySelector("h3").textContent;
+        const priceText = article.querySelector("div.text-xl").textContent;
+        const price = parseFloat(priceText.replace("$", ""));
+        addProductToCart(name, price);
+      });
+    });
+
+    // Checkout modal open
+    checkoutButton.addEventListener("click", () => {
+      checkoutModal.classList.remove("hidden");
+    });
+
+    // Checkout modal close
+    closeCheckoutButton.addEventListener("click", () => {
+      checkoutModal.classList.add("hidden");
+    });
+
+    // Checkout form submit with email notification simulation
+    checkoutForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!checkoutForm.checkValidity()) {
+        checkoutForm.reportValidity();
+        return;
+      }
+      const name = checkoutForm.name.value;
+      const email = checkoutForm.email.value;
+      const total = cart.reduce((acc, item) => acc + item.price, 0).toFixed(2);
+      alert(
+        `Gracias por tu compra, ${name}! Se ha enviado un correo de confirmación a ${email} con el total de $${total}.`
+      );
+      // Simulate sending email (in real app, backend needed)
+      console.log(`Enviando correo a ${email} con detalles del pedido...`);
+      cart = [];
+      updateCartUI();
+      checkoutModal.classList.add("hidden");
+    });
+
+    // Filtering products
+    const filterType = document.getElementById("filter-type");
+    const filterBrand = document.getElementById("filter-brand");
+    const filterPrice = document.getElementById("filter-price");
+    const filterSkinTone = document.getElementById("filter-skin-tone");
+    const productList = document.getElementById("product-list");
+
+    function filterProducts() {
+      const typeVal = filterType.value;
+      const brandVal = filterBrand.value;
+      const priceVal = filterPrice.value;
+      const skinToneVal = filterSkinTone.value;
+
+      const products = productList.querySelectorAll("article");
+      products.forEach((product) => {
+        const pType = product.getAttribute("data-type");
+        const pBrand = product.getAttribute("data-brand");
+        const pPrice = parseFloat(product.getAttribute("data-price"));
+        const pSkinTones = product.getAttribute("data-skin-tone").split(" ");
+
+        let show = true;
+
+        if (typeVal && pType !== typeVal) show = false;
+        if (brandVal && pBrand !== brandVal) show = false;
+        if (priceVal) {
+          if (priceVal === "0-20" && !(pPrice <= 20)) show = false;
+          else if (priceVal === "21-50" && !(pPrice >= 21 && pPrice <= 50))
+            show = false;
+          else if (priceVal === "51-100" && !(pPrice >= 51 && pPrice <= 100))
+            show = false;
+          else if (priceVal === "100+" && !(pPrice > 100)) show = false;
+        }
+        if (skinToneVal && !pSkinTones.includes(skinToneVal)) show = false;
+
+        product.style.display = show ? "flex" : "none";
+      });
+    }
+
+    filterType.addEventListener("change", filterProducts);
+    filterBrand.addEventListener("change", filterProducts);
+    filterPrice.addEventListener("change", filterProducts);
+    filterSkinTone.addEventListener("change", filterProducts);
+
+    // Pop-up bienvenida
+    const welcomePopup = document.getElementById("welcome-popup");
+    const closeWelcomeBtn = document.getElementById("close-welcome");
+    const welcomeForm = document.getElementById("welcome-form");
+    const welcomeMessage = document.getElementById("welcome-message");
+
+    function showWelcomePopup() {
+      if (!localStorage.getItem("welcomeDismissed")) {
+        welcomePopup.classList.remove("hidden");
+      }
+    }
+
+    closeWelcomeBtn.addEventListener("click", () => {
+      welcomePopup.classList.add("hidden");
+      localStorage.setItem("welcomeDismissed", "true");
+    });
+
+    welcomeForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const emailInput = welcomeForm["welcome-email"];
+      if (!emailInput.checkValidity()) {
+        emailInput.reportValidity();
+        return;
+      }
+      // Simulate saving email and giving discount
+      welcomeMessage.textContent =
+        "¡Gracias! Tu descuento del 10% ha sido activado. Revisa tu correo.";
+      welcomeMessage.classList.remove("hidden");
+      emailInput.value = "";
+      setTimeout(() => {
+        welcomePopup.classList.add("hidden");
+        localStorage.setItem("welcomeDismissed", "true");
+      }, 4000);
+    });
+
+    // Mostrar pop-up al cargar
+    window.addEventListener("load", showWelcomePopup);
+
+    // Seguimiento de pedidos
+    const trackingForm = document.getElementById("tracking-form");
+    const trackingResult = document.getElementById("tracking-result");
+
+    trackingForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const orderNumber = trackingForm["order-number"].value.trim();
+      if (!orderNumber) {
+        trackingResult.textContent = "Por favor ingresa un número de pedido válido.";
+        trackingResult.classList.remove("hidden");
+        return;
+      }
+      // Simulación de estados de pedido
+      const estados = [
+        "Pedido recibido",
+        "En preparación",
+        "Enviado",
+        "En camino",
+        "Entregado",
+      ];
+      // Simular estado aleatorio basado en número de pedido
+      const hash = orderNumber
+        .split("")
+        .reduce((acc, char) => acc + char.charCodeAt(0), 0);
+      const estado = estados[hash % estados.length];
+      trackingResult.textContent = `Estado del pedido #${orderNumber}: ${estado}`;
+      trackingResult.classList.remove("hidden");
+    });
+
+    // Kits personalizados
+    const kitForm = document.getElementById("kit-form");
+    const kitPriceDisplay = document.getElementById("kit-price");
+
+    function calculateKitPrice() {
+      const baseSelect = kitForm["kit-base"];
+      const labialSelect = kitForm["kit-labial"];
+      const delineadorSelect = kitForm["kit-delineador"];
+
+      let total = 0;
+      if (baseSelect.value) {
+        const option = baseSelect.options[baseSelect.selectedIndex];
+        total += parseFloat(option.getAttribute("data-price")) || 0;
+      }
+      if (labialSelect.value) {
+        const option = labialSelect.options[labialSelect.selectedIndex];
+        total += parseFloat(option.getAttribute("data-price")) || 0;
+      }
+      if (delineadorSelect.value) {
+        const option = delineadorSelect.options[delineadorSelect.selectedIndex];
+        total += parseFloat(option.getAttribute("data-price")) || 0;
+      }
+      // 10% de descuento
+      const discounted = total * 0.9;
+      kitPriceDisplay.textContent = `Precio total: $${discounted.toFixed(2)}`;
+      return discounted;
+    }
+
+    kitForm.addEventListener("change", calculateKitPrice);
+    kitForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!kitForm.checkValidity()) {
+        kitForm.reportValidity();
+        return;
+      }
+      const base = kitForm["kit-base"].value;
+      const labial = kitForm["kit-labial"].value;
+      const delineador = kitForm["kit-delineador"].value;
+      const price = calculateKitPrice();
+
+      addProductToCart(`Kit personalizado: ${base}, ${labial}, ${delineador}`, price);
+      alert("Kit personalizado añadido al carrito con 10% de descuento.");
+      kitForm.reset();
+      calculateKitPrice();
+    });
+
+    // Videos cortos en productos
+    const videoButtons = document.querySelectorAll(".video-btn");
+    const videoModal = document.getElementById("video-modal");
+    const videoPlayer = document.getElementById("video-player");
+    const closeVideoBtn = document.getElementById("close-video");
+
+    videoButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const videoSrc = btn.getAttribute("data-video");
+        if (videoSrc) {
+          videoPlayer.src = videoSrc;
+          videoModal.classList.remove("hidden");
+          videoPlayer.play();
+        }
+      });
+    });
+
+    closeVideoBtn.addEventListener("click", () => {
+      videoPlayer.pause();
+      videoPlayer.currentTime = 0;
+      videoPlayer.src = "";
+      videoModal.classList.add("hidden");
+    });
+
+    // Probador virtual
+    const uploadPhotoInput = document.getElementById("upload-photo");
+    const userPhoto = document.getElementById("user-photo");
+    const virtualLipstick = document.getElementById("virtual-lipstick");
+    const virtualEyeshadow = document.getElementById("virtual-eyeshadow");
+    const applyVirtualBtn = document.getElementById("apply-virtual-makeup");
+    const resetVirtualBtn = document.getElementById("reset-virtual-makeup");
+    const virtualCanvas = document.getElementById("virtual-canvas");
+    const ctx = virtualCanvas.getContext("2d");
+
+    let originalImage = null;
+
+    uploadPhotoInput.addEventListener("change", (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function (event) {
+        userPhoto.src = event.target.result;
+        userPhoto.classList.remove("hidden");
+        originalImage = new Image();
+        originalImage.onload = () => {
+          virtualCanvas.width = originalImage.width;
+          virtualCanvas.height = originalImage.height;
+          virtualCanvas.style.display = "block";
+          ctx.clearRect(0, 0, virtualCanvas.width, virtualCanvas.height);
+          ctx.drawImage(originalImage, 0, 0);
+        };
+        originalImage.src = event.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+
+    function applyMakeup() {
+      if (!originalImage) return;
+      ctx.clearRect(0, 0, virtualCanvas.width, virtualCanvas.height);
+      ctx.drawImage(originalImage, 0, 0);
+
+      // Simple overlay for labial: draw a semi-transparent ellipse on lips area
+      const lipColor = virtualLipstick.value;
+      if (lipColor) {
+        ctx.fillStyle = lipColor + "88"; // semi-transparent
+        // Approximate lips area (center bottom)
+        const centerX = virtualCanvas.width / 2;
+        const centerY = (virtualCanvas.height * 3) / 4;
+        ctx.beginPath();
+        ctx.ellipse(centerX, centerY, virtualCanvas.width / 6, virtualCanvas.height / 20, 0, 0, 2 * Math.PI);
+        ctx.fill();
+      }
+
+      // Simple overlay for eyeshadow: draw semi-transparent rectangles on eyes area
+      const eyeColor = virtualEyeshadow.value;
+      if (eyeColor) {
+        ctx.fillStyle = eyeColor + "88"; // semi-transparent
+        // Approximate eyes area (top center left and right)
+        const eyeWidth = virtualCanvas.width / 8;
+        const eyeHeight = virtualCanvas.height / 20;
+        const eyeY = virtualCanvas.height / 3;
+        const leftEyeX = virtualCanvas.width / 3 - eyeWidth / 2;
+        const rightEyeX = (virtualCanvas.width * 2) / 3 - eyeWidth / 2;
+        ctx.fillRect(leftEyeX, eyeY, eyeWidth, eyeHeight);
+        ctx.fillRect(rightEyeX, eyeY, eyeWidth, eyeHeight);
+      }
+    }
+
+    applyVirtualBtn.addEventListener("click", () => {
+      if (!originalImage) {
+        alert("Por favor, sube una foto primero.");
+        return;
+      }
+      applyMakeup();
+    });
+
+    resetVirtualBtn.addEventListener("click", () => {
+      if (!originalImage) return;
+      ctx.clearRect(0, 0, virtualCanvas.width, virtualCanvas.height);
+      ctx.drawImage(originalImage, 0, 0);
+      virtualLipstick.value = "";
+      virtualEyeshadow.value = "";
+    });
+
+    // Newsletter form
+    const newsletterForm = document.getElementById("newsletter-form");
+    const newsletterMessage = document.getElementById("newsletter-message");
+
+    newsletterForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const emailInput = newsletterForm["newsletter-email"];
+      if (!emailInput.checkValidity()) {
+        emailInput.reportValidity();
+        return;
+      }
+      newsletterMessage.textContent =
+        "¡Gracias por suscribirte! Pronto recibirás nuestros consejos y novedades.";
+      newsletterMessage.classList.remove("hidden");
+      emailInput.value = "";
+      setTimeout(() => {
+        newsletterMessage.classList.add("hidden");
+      }, 6000);
+    });
+
+    // Blog read more modal
+    const blogModal = document.getElementById("blog-modal");
+    const blogModalTitle = document.getElementById("blog-modal-title");
+    const blogModalContent = document.getElementById("blog-modal-content");
+    const closeBlogModalBtn = document.getElementById("close-blog-modal");
+    const readMoreButtons = document.querySelectorAll(".read-more-btn");
+
+    readMoreButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const title = btn.getAttribute("data-title");
+        const content = btn.getAttribute("data-content");
+        blogModalTitle.textContent = title;
+        blogModalContent.textContent = content;
+        blogModal.classList.remove("hidden");
+      });
+    });
+
+    closeBlogModalBtn.addEventListener("click", () => {
+      blogModal.classList.add("hidden");
+    });
+
+    // Perfil de usuario
+    const profileButton = document.getElementById("profile-button");
+    const profileSection = document.getElementById("usuario");
+    const closeProfileBtn = document.getElementById("close-profile");
+    const profileEmail = document.getElementById("profile-email");
+    const profilePhoto = document.getElementById("profile-photo");
+    const profileOrdersList = document.getElementById("profile-orders");
+    const profilePedidosList = document.getElementById("profile-pedidos");
+
+    // Simulación de datos de usuario
+    const userData = {
+      email: "usuario@ejemplo.com",
+      photo: "https://placehold.co/128x128/png?text=Perfil",
+      historialCompras: [
+        { id: "12345", date: "2024-05-10", total: 85.0 },
+        { id: "12344", date: "2024-04-28", total: 45.0 },
+        { id: "12343", date: "2024-04-15", total: 120.0 },
+      ],
+      pedidos: [
+        { id: "12345", date: "2024-05-10", total: 85.0, status: "Entregado" },
+        { id: "12346", date: "2024-06-01", total: 60.0, status: "En camino" },
+      ],
+    };
+
+    function openProfile() {
+      profileEmail.textContent = userData.email;
+      profilePhoto.src = userData.photo;
+
+      // Limpiar listas
+      profileOrdersList.innerHTML = "";
+      profilePedidosList.innerHTML = "";
+
+      // Agregar historial de compras
+      userData.historialCompras.forEach((order) => {
+        const li = document.createElement("li");
+        li.className = "py-4 flex justify-between items-center";
+        li.innerHTML = `
+          <div>
+            <p class="font-semibold text-gray-800 dark:text-gray-200">Pedido #${order.id}</p>
+            <p class="text-gray-600 text-sm dark:text-gray-400">Fecha: ${order.date}</p>
+          </div>
+          <div class="text-pink-700 font-semibold">$${order.total.toFixed(2)}</div>
+        `;
+        profileOrdersList.appendChild(li);
+      });
+
+      // Agregar pedidos
+      userData.pedidos.forEach((pedido) => {
+        const li = document.createElement("li");
+        li.className = "py-4 flex justify-between items-center";
+        li.innerHTML = `
+          <div>
+            <p class="font-semibold text-gray-800 dark:text-gray-200">Pedido #${pedido.id}</p>
+            <p class="text-gray-600 text-sm dark:text-gray-400">Fecha: ${pedido.date}</p>
+            <p class="text-gray-600 text-sm dark:text-gray-400">Estado: ${pedido.status}</p>
+          </div>
+          <div class="text-pink-700 font-semibold">$${pedido.total.toFixed(2)}</div>
+        `;
+        profilePedidosList.appendChild(li);
+      });
+
+      profileSection.style.display = "block";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function closeProfile() {
+      profileSection.style.display = "none";
+    }
+
+    profileButton.addEventListener("click", openProfile);
+    closeProfileBtn.addEventListener("click", closeProfile);
+  </script>
+ </body>
+</html>
